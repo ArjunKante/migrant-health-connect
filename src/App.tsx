@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { LoginScreen } from "./components/LoginScreen";
 import { PatientPortal } from "./components/PatientPortal";
 import { HospitalPortal } from "./components/HospitalPortal";
-import5 h-5 text-blue-500" />;
-    if (type === "edited") return { GovernmentDashboard } from "./components/Govern <AlertCircle className="w-5 h-5 text-orange-500mentDashboard";
 import { TopBar } from "./components/TopBar";
+import { GovernmentDashboard } from "./components/GovernmentDashboard";
 
 export type UserType = {
   id: string;

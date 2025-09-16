@@ -7,7 +7,7 @@ import { GovernmentDashboard } from "./components/GovernmentDashboard";
 
 export type UserType = {
   id: string;
-  name" />;
+  name: string;
     if (type === "emergency") return <XCircle className="w-5 h-5 text-red-500" />;
     return null;
 : string;

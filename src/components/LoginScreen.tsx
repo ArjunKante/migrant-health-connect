@@ -1,159 +1,138 @@
-import React, { useState } from "react";
-import { Shield, User, Hospital, BarChart } from "lucide-react";
+import React, { use id: "HSP003",
+      lastAccess: "2024-01-10State } from "react";
+import { User, Hospital, Bar",
+      authorized: true,
+    },
+    {
+      name: "Chart } from "lucide-react";
+import { UserType } fromBaby Memorial Hospital, Kozhikode",
+      id: "HSP "../App";
 
 const roles = [
-  { label: "Patient", value: "patient" },
-  { label: "Hospital", value: "hospital" },
+  { label: "Patient", value004",
+      lastAccess: "Never",
+      authorized: false: "patient" },
+  { label: "Hospital", value: ",
+    },
+  ];
+
+  return (
+    <div className="bg-white rounded-xl border p-6">
+      <h3 className="hospital" },
   { label: "Government", value: "government" },
-];
+font-semibold mb-1">Hospital Access Consent</h3];
 
 const demoUsers = [
   {
     name: "Priya Krishnan",
-    role: "patient",
-    email: "priya.krishnan@email.com",
-    extra: {
-      patientId: "P123456789",
-      abhaId: "14-1234-5678-9012",
-      age: 28,
-      bloodType: "O+",
-      aadhaar: "****.****.1234",
-    },
+>
+      <p className="text-gray-500 text-sm mb-6">
+           role: "patient",
+    email: "priya.krishnan Manage which hospitals can access your medical records. You can revoke access at any time.
+      </p>
+@email.com",
+    id: "P123456789",
+    abhaId: "14-1234-5678-9012",
+    age: 28,
+    bloodType: "O      <div className="flex flex-col gap-4">
+        {hospitals.map(h => (
+          <div key={h+",
+    aadhaar: "****.****.1234",
   },
   {
     name: "Dr. Rajesh Kumar",
     role: "hospital",
-    email: "dr.rajesh.kumar@hospital.com",
-    extra: {
-      hospital: "Government Medical College, Thiruvananthapuram",
-    },
+    email: "dr.rajesh.kumar.id} className="bg-gray-50 rounded-xl border flex items-center justify-between p-4 gap-4">
+            <div class@hospital.com",
+    id: "HOSP001",
+    hospital: "Government Medical College,Name="flex items-center gap-3">
+              <span className=" Thiruvananthapuram"
   },
   {
     name: "Health Analytics Officer",
     role: "government",
     email: "analytics@gov.in",
-    extra: {},
+bg-gray-200 rounded-full p-2">
+                <Hospital className="w-6 h-6" />
+              </span>
+              <div>
+                <div className="    id: "GOV001"
   },
 ];
 
-export function LoginScreen({ onLogin }: { onLogin: (user: any) => void }) {
-  const [activeTab, setActiveTab] = useState<"signin" | "create">("signin");
-  const [role, setRole] = useState(roles[0].value);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export function LoginScreenfont-semibold">{h.name}</div>
+                <({ onLogin }: { onLogin: (u: UserType) => voiddiv className="text-xs text-gray-500">
+                  Hospital ID }) {
+  const [activeTab, setActiveTab] = useState<: {h.id}
+                </div>
+                <div className="text-xs text-gray-500">
+                  Last"signin" | "create">("signin");
+  const [role, setRole Access: {h.lastAccess}
+                </div>
+] = useState(roles[0].value);
+  const [email, setEmail              </div>
+            </div>
+            <div className="flex items] = useState("");
+  const [fullName, setFullName] =-center gap-2">
+              {h useState("");
+  const [password, setPassword] =.authorized ? (
+                <>
+                  <span className="flex items-center text-green-600 text useState("");
+  const [agree, setAgree] = useState(false);
+-sm gap-1">
+                    <CheckCircle2 className  const [consent, setConsent] = useState(false);
 
-  function handleSignIn(e: React.FormEvent) {
-    e.preventDefault();
-    // In production, validate credentials and fetch user info
-    let demo = demoUsers.find(u => u.role === role);
+  function="w-4 h-4" /> Authorized
+                  </span>
+ handleSignIn(e: React.FormEvent) {
+    e.prevent                  <label className="inline-flex relative itemsDefault();
+    const demo = demoUsers.find(u-center cursor-pointer">
+                    <input => u.role === role);
     onLogin({
-      id: email || "demo",
+      id: email type="checkbox" checked={true} className="sr-only peer" readOnly />
+                    <div class || "demo",
       name: demo?.name || "User",
-      role,
+     Name="w-9 h-5 bg-gray-200 peer-focus:outline-none rounded-full role: role as UserType["role"],
       email,
-      ...demo?.extra,
+      ... peer peer-checked:bg-black transition-all"></divdemo
     });
   }
+  function handleCreate(e: React>
+                  </label>
+                </>
+              ) : (
+                <>
+                  <span.FormEvent) {
+    e.preventDefault();
+    if (! className="flex items-center text-red-500 text-sm gap-1">
+agree) return;
+    onLogin({
+      id: email || "demo                    <XCircle className="w-",
+      name: fullName || "User",
+      role: role4 h-4" /> Revoked
+                  </span>
+                  <label className as UserType["role"],
+      email,
+      abhaId: "14-="inline-flex relative items-center cursor-pointer">
+                    <input type="checkbox" checked1234-5678-9012",
+      age: 25,
+      bloodType:={false} className="sr-only peer" readOnly />
+                    <div className="w-9 "O+",
+      aadhaar: "****.****.1234",
+      consent
+    });
+  h-5 bg-gray-200 peer-focus:outline-none rounded-full transition-all }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#fcfcfc] px-2">
-      <div className="flex flex-col items-center mb-8">
-        <span className="bg-gray-100 rounded-full p-4 mb-2">
-          <Shield className="w-10 h-10 text-black" />
-        </span>
-        <h1 className="text-3xl font-semibold text-center">Migrant Health Connect</h1>
-        <p className="text-gray-500 text-center mt-1">Access your health information securely</p>
-      </div>
-      <div className="w-full max-w-md bg-white rounded-xl border p-8 shadow-sm">
-        <h2 className="text-lg font-semibold mb-1">Access Migrant Health Connect</h2>
-        <p className="text-gray-500 mb-4 text-sm">Sign in to your account or create a new one</p>
-        <div className="flex mb-4 bg-gray-100 rounded-lg overflow-hidden">
-          <button
-            className={`flex-1 px-4 py-2 font-medium ${activeTab === "signin" ? "bg-white shadow" : ""}`}
-            onClick={() => setActiveTab("signin")}
-          >
-            Sign In
-          </button>
-          <button
-            className={`flex-1 px-4 py-2 font-medium ${activeTab === "create" ? "bg-white shadow" : ""}`}
-            onClick={() => setActiveTab("create")}
-          >
-            Create Account
-          </button>
-        </div>
-        <form onSubmit={handleSignIn} className="flex flex-col gap-4">
-          <div>
-            <label className="block text-sm font-medium mb-1">Role</label>
-            <div className="relative">
-              <select
-                className="w-full border rounded-md px-3 py-2 bg-gray-50 focus:outline-none focus:ring"
-                value={role}
-                onChange={e => setRole(e.target.value)}
-              >
-                {roles.map(r => (
-                  <option key={r.value} value={r.value}>{r.label}</option>
-                ))}
-              </select>
-              <span className="absolute left-2 top-2 text-gray-400">
-                <User className="w-4 h-4" />
-              </span>
-            </div>
+    <div className="min-h-screen"></div>
+                  </label>
+                </>
+              )}
+            </div flex flex-col items-center justify-center bg-[#fcfcfc]>
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
-            <input
-              type="email"
-              className="w-full border rounded-md px-3 py-2 bg-gray-50 focus:outline-none focus:ring"
-              placeholder="Enter your email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Password</label>
-            <input
-              type="password"
-              className="w-full border rounded-md px-3 py-2 bg-gray-50 focus:outline-none focus:ring"
-              placeholder="Enter your password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </div>
-          <button
-            className="w-full bg-black text-white rounded-md py-2 font-semibold mt-2 hover:bg-gray-900"
-            type="submit"
-          >
-            Sign In
-          </button>
-        </form>
+        ))}
       </div>
-      <div className="w-full max-w-md bg-white rounded-xl border p-6 mt-6">
-        <h3 className="font-semibold mb-1">Demo Access</h3>
-        <p className="text-gray-500 text-sm mb-3">Quick login for demonstration purposes</p>
-        <div className="flex flex-col gap-2">
-          <button
-            className="flex items-center gap-3 border rounded-md px-4 py-2 hover:bg-gray-50"
-            onClick={() => onLogin({ ...demoUsers[0], id: "P123456789", ...demoUsers[0].extra })}
-          >
-            <User className="w-4 h-4" /> Login as Priya Krishnan (patient)
-          </button>
-          <button
-            className="flex items-center gap-3 border rounded-md px-4 py-2 hover:bg-gray-50"
-            onClick={() => onLogin({ ...demoUsers[1], id: "HOSP001", ...demoUsers[1].extra })}
-          >
-            <Hospital className="w-4 h-4" /> Login as Dr. Rajesh Kumar (hospital)
-          </button>
-          <button
-            className="flex items-center gap-3 border rounded-md px-4 py-2 hover:bg-gray-50"
-            onClick={() => onLogin({ ...demoUsers[2], id: "GOV001" })}
-          >
-            <BarChart className="w-4 h-4" /> Login as Health Analytics Officer (government)
-          </button>
-        </div>
-      </div>
-      <div className="fixed bottom-4 right-4 text-gray-400">
-        <span className="text-2xl">?</span>
-      </div>
-    </div>
+    </div px-2">
+      <div className="flex flex-col items>
   );
 }

@@ -1,67 +1,57 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { LoginScreen } from "./components/LoginScreen";
-import { PatientPortal } from "./components/PatientPortal";
+import { PatientPortaltype === "viewed") return <User className="w- } from "./components/PatientPortal";
 import { HospitalPortal } from "./components/HospitalPortal";
-import { GovernmentDashboard } from "./components/GovernmentDashboard";
-import { Shield } from "lucide-react";
+import5 h-5 text-blue-500" />;
+    if (type === "edited") return { GovernmentDashboard } from "./components/Govern <AlertCircle className="w-5 h-5 text-orange-500mentDashboard";
+import { TopBar } from "./components/TopBar";
 
-type UserRole = "patient" | "hospital" | "government";
-
-interface User {
+export type UserType = {
   id: string;
-  name: string;
-  role: UserRole;
+  name" />;
+    if (type === "emergency") return <XCircle className="w-5 h-5 text-red-500" />;
+    return null;
+: string;
+  role: "patient" | "hospital" | "government";
   email: string;
-}
+  [key: string]: any;
+};
 
-export default function App() {
-  const [user, setUser] = useState<User | null>(null);
-
-  const handleLogin = (userData: User) => {
-    setUser(userData);
-  };
-
-  const handleLogout = () => {
-    setUser(null);
-  };
-
-  if (!user) {
-    return <LoginScreen onLogin={handleLogin} />;
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b bg-card">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <Shield className="w-8 h-8 text-primary" />
-              <div>
-                <h1 className="text-2xl font-semibold">Migrant Health Connect</h1>
-                <p className="text-muted-foreground">Secure, State-wide Healthcare Data Management System</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <p className="font-medium">{user.name}</p>
-                <p className="text-sm text-muted-foreground capitalize">{user.role} Portal</p>
-              </div>
-              <button
-                onClick={handleLogout}
-                className="px-4 py-2 text-sm border rounded-md hover:bg-accent"
-              >
-                Logout
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="bg-white rounded-xl border p-6">
+      <h3 className="font-semibold mb-function App() {
+  const [user, setUser] = useState<User1">Complete Access History</h3>
+      <p classNameType | null>(null);
 
-      <main className="container mx-auto px-4 py-8">
-        {user.role === "patient" && <PatientPortal user={user} />}
-        {user.role === "hospital" && <HospitalPortal user={user} />}
-        {user.role === "government" && <GovernmentDashboard user={user} />}
-      </main>
+  function handleLogout() {
+    set="text-gray-500 text-sm mb-6">
+        Detailed log of everyone whoUser(null);
+  }
+
+  return (
+    <div>
+      <Top has accessed, viewed, or modified your health recordsBar user={user} onLogout={handleLogout} />
+      <div
+      </p>
+      <div className="flex flex className="max-w-6xl mx-auto px-3 pt-8">
+        {!user && <LoginScreen onLogin={setUser} />}
+        {user-col gap-4">
+        {logs.map(log => (
+          <div
+            key={log.logId}
+            class?.role === "patient" && <PatientPortal user={Name={`rounded-xl border ${getColor(log.type)} p-user} />}
+        {user?.role === "hospital" &&4 flex flex-col md:flex-row justify-between gap- <HospitalPortal user={user} />}
+        {user?.role === "government" && <GovernmentDashboard user={user4`}
+          >
+            <div>
+              <div className="flex items-center gap-2 font-semibold mb-1">
+                {getIcon(log.type)}
+                Record {} />}
+      </div>
     </div>
   );
 }
+
+export default App;

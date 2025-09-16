@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { LoginScreen } from "./components/LoginScreen";
-import { PatientPortaltype === "viewed") return <User className="w- } from "./components/PatientPortal";
+import { PatientPortal } from "./components/PatientPortal";
 import { HospitalPortal } from "./components/HospitalPortal";
 import5 h-5 text-blue-500" />;
     if (type === "edited") return { GovernmentDashboard } from "./components/Govern <AlertCircle className="w-5 h-5 text-orange-500mentDashboard";

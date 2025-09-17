@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { LoginScreen } from "./components/LoginScreen";
 import { PatientPortal } from "./components/PatientPortal";
 import { HospitalPortal } from "./components/HospitalPortal";
-import { TopBar } from "./components/TopBar";
 import { GovernmentDashboard } from "./components/GovernmentDashboard";
+import { TopBar } from "./components/TopBar";
 
 export type UserType = {
   id: string;
@@ -32,5 +32,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
